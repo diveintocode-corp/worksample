@@ -290,7 +290,7 @@ rake routes"を行ってみても、Prefixに"blog"　”new_blog"もあれば�
 `4_question_answer.md`に回答を記述して、GithubにPushしてください。
 
 
-## 最終提出
+## 提出
 
 GithubのURLを提出してください！  
 また、以下の項目を満たしているか確認しましょう。  
