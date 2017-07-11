@@ -1,7 +1,7 @@
 # DIVE INTO CODE WorkSample
 
-こんにちは、EdTech Team リーダーの中尾と申します！  
-この度は、教育メンターの募集にご応募くださり、誠にありがとうございます。
+こんにちは、EdTech Team リーダーの中尾と申します！
+この度は、教育メンターの募集にご応募くださり、誠にありがとうございます。　
 　
 皆さんには、DIVE INTO CODEのメンバーになる前に、ワークサンプルを行っていただきます。
 ワークサンプルとは、実際の業務と同じような業務を体験することで、実際にメンバーになり働いた時に生じるギャップを防ぐ効果があったり、業務に向いているかの確認をすることができます。
@@ -45,7 +45,7 @@
 現時点で知識が身についていない方を対象に、参考教材を記述しておきます！
 
 Git/Github/GithubFlow基礎  
-https://employment.en-japan.com/engineerhub/entry/2017/01/31/110000　
+https://employment.en-japan.com/engineerhub/entry/2017/01/31/110000
 https://thinkit.co.jp/article/8410
 
 HTML/CSS基礎  
@@ -55,7 +55,7 @@ Ruby基礎
 https://www.codecademy.com/learn/ruby
 
 Rails基礎  
-https://www.codecademy.com/learn/learn-rails  
+https://www.codecademy.com/learn/learn-rails
 
 Python基礎（DIVE INTO CODEではバージョン3を主に使用していることに注意してください。）  
 https://www.codecademy.com/learn/python
