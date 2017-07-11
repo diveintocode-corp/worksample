@@ -1,6 +1,6 @@
 # DIVE INTO CODE WorkSample
 
-初めまして、Edtechチームリーダーの中尾です！  
+初めまして、EdTechチームリーダーの中尾です！  
 
 皆さんには、DIVE INTO CODEのメンバーになる前に、ワークサンプルを行っていただきます。
 ワークサンプルとは、実際の業務と同じような業務を体験することで、実際にメンバーになり働いた時に生じるギャップを防ぐ効果があったり、業務に向いているかの確認をすることができます。
@@ -42,7 +42,8 @@
 現時点で知識が身についていない方を対象に、参考教材を記述しておきます！
 
 Git/Github/GithubFlow基礎  
-https://www.udacity.com/course/intro-to-machine-learning--ud120
+https://employment.en-japan.com/engineerhub/entry/2017/01/31/110000
+https://thinkit.co.jp/article/8410
 
 HTML/CSS基礎  
 https://www.codecademy.com/learn/learn-html-css
