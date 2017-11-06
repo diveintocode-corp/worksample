@@ -1,0 +1,53 @@
+//y = a*x + bというラインを作りたい、今x = { 1, 2, 3 }とy = { 3, 6, 9 }という三つの点があるので、最小二乗法を使ってaとbを探します
+  
+ 　 public class LinearRegression {
+
+　　public static void main(String[] args) {
+
+　　int n = 0;
+
+　　double[] x = { 1, 2, 3 };
+
+　　double[] y = { 3, 6, 9 };
+
+　　double sumx = 0.0, sumy = 0.0, sumx2 = 0.0;//ｘとｙのsumを定義する
+
+　　while (n < x.length) {
+
+　　sumx += x[n];
+
+　　sumx2 += x[n] * x[n];
+
+　　sumy += y[n];
+
+　　n++;
+
+　　}
+
+
+　　double xbar = sumx / n;//平均値を定義する
+
+　　double ybar = sumy / n;
+
+
+　　double xxbar = 0.0, yybar = 0.0, xybar = 0.0;//係数を計算する
+
+　　for (int i = 0; i < n; i++) {
+
+　　xxbar += (x[i] - xbar) * (x[i] - xbar);
+
+　　yybar += (y[i] - ybar) * (y[i] - ybar);
+
+　　xybar += (x[i] - xbar) * (y[i] - ybar);
+
+　　}
+
+　　double beta1 = xybar / xxbar;//ここでａが分かりました
+
+　　double beta0 = ybar - beta1 * xbar;//ここでｂが分かりました
+
+　　System.out.println("y = " + beta1 + " * x + " + beta0);
+
+　　}
+
+　　}
