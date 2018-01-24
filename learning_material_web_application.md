@@ -33,5 +33,4 @@
 はじめてのプログラミングを通して、思ったこと、感じたこと、気づいたことをぜひ教えてください。
 楽しみにお待ちしております！
 
-DIVE INTO CODE 野呂浩良
-https://www.facebook.com/norotime
+DIVE INTO CODE [野呂浩良](https://www.facebook.com/norotime)
