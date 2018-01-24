@@ -1,5 +1,5 @@
 # 推奨学習教材
-
+  
 自習経験ゼロでも学習のスタートラインに立つために推薦する学習教材があります。  
 英語のサービスは、ブラウザの翻訳機能を使い、翻訳すれば容易に学習ができます。  
 なお、弊社に著作権が帰属していないサービスがあります。 `それらの教材に関する質疑応答はできません。` あらかじめご了承ください。  
@@ -39,6 +39,6 @@ Raw](https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8cf49d57fa)
 [Rails03_Codeanywhere版](https://diver.diveintocode.jp/seminar_documents/rails03_codeanywhere)  
   
 はじめてのプログラミングを通して、思ったこと、感じたこと、気づいたことをぜひ教えてください。  
-楽しみにお待ちしております。
+楽しみにお待ちしております。  
   
 DIVE INTO CODE [野呂浩良](https://www.facebook.com/norotime)
