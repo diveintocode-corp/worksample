@@ -85,7 +85,7 @@ For example, "blogs" is specified for the parameter when the controller is creat
 When I try "rake routes", there are also "blog" "new_blog" "blogs" and "confirm_blogs" in the Prefix, and I do not understand why.
 ```
 
-### Push方法
+### How to Push
 
 Please write the answer on `4_question_answer.md` and Push for Github.
 
