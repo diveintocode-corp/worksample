@@ -42,7 +42,7 @@ You will be in charge of "Full Stack Web Developer".
 - Do not just tell the answer, but support for that person
 - Online communication can cause misunderstanding, so be careful about expression
 - Support considering words not explained in advance and user levels 
-- "Give a man a fish and you feed him for a day, teach him how to fish and you feed him for a lifetime" Remember not to tell the students the answer, but teach them how to solve the problem.
+- "Give a man a fish and you feed him for a day, teach him how to fish and you feed him for a lifetime." Remember not to tell the students the answer, but teach them how to solve the problem.
 
 ## Questions
 
@@ -101,4 +101,4 @@ Please submit the URL of your Github repository after you finish your work.
 
 ## After the worksample
 
-After you pass the worksample, you will experience the DIVER Q&A chatting to be assessed as a mentor.
+After you pass the worksample, you will experience the DIVER Q&A chatting in order to check your skill as a mentor.
