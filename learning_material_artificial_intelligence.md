@@ -30,6 +30,9 @@ Raw](https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8cf49d57fa)
 [Intro to Machine Learning](https://www.udacity.com/course/intro-to-machine-learning--ud120)  
 [Deep Learning An MIT Press book](http://www.deeplearningbook.org/)  
 
+*ゼロからKaggleに参加できるようになる*
+[kaggle tutorial](https://www.kaggle.com/c/house-prices-advanced-regression-techniques#tutorials)
+
 はじめてのプログラミングを通して、思ったこと、感じたこと、気づいたことをぜひ教えてください。  
 楽しみにお待ちしております。  
 
