@@ -1,4 +1,4 @@
-# エキスパートAIコース AI・メンター
+# 機械学習エンジニアコース 教育メンター
 ## 推奨学習教材
   
 自習経験ゼロでも学習のスタートラインに立つために推薦する学習教材があります。  
@@ -36,5 +36,4 @@ Raw](https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8cf49d57fa)
 はじめてのプログラミングを通して、思ったこと、感じたこと、気づいたことをぜひ教えてください。  
 楽しみにお待ちしております。  
 
-DIVE INTO CODE  
-[野呂浩良](https://www.facebook.com/norotime)
+DIVE INTO CODE [野呂浩良](https://www.facebook.com/norotime)
