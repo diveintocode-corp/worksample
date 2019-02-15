@@ -141,8 +141,6 @@ HTML/CSS/JSの基礎とRuby,RubyアルゴリズムとGit/Githubを学んだ初�
 ### リスト
 ```
 
-※AWSのlambdaではありません。
-
 `肉付け後の例`
 
 ```
