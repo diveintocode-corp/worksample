@@ -27,7 +27,7 @@ https://github.com/DiveintoCode-corp/worksample/blob/master/educational_mentor.m
 
 ### カスタマーサポート
 
-（準備中）
+https://github.com/DiveintoCode-corp/worksample/blob/master/customer_support.md
 
 
 ### リクルーティングアドバイザー
