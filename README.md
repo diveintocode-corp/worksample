@@ -20,10 +20,13 @@
 職種ごとにワークサンプルが異なります。  
 ご希望される職種のワークサンプルをご覧ください。
 
-### 教育メンター
+### 教育メンター（Webエンジニアコース）
 
-https://github.com/DiveintoCode-corp/worksample/blob/master/educational_mentor.md
+https://github.com/DiveintoCode-corp/worksample/blob/master/educational_mentor_web.md
 
+### 教育メンター（機械学習コース）
+
+https://github.com/DiveintoCode-corp/worksample/blob/master/educational_mentor_ml.md
 
 ### カスタマーサポート
 
@@ -33,4 +36,3 @@ https://github.com/DiveintoCode-corp/worksample/blob/master/customer_support.md
 ### リクルーティングアドバイザー
 
 （準備中）
-
