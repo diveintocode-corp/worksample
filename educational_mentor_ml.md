@@ -109,7 +109,7 @@ https://github.com/DiveintoCode-corp/worksample/blob/master/ml_sprint10.md
 
 ### 作成した文章をGithubに公開
 
-Githubリポジトリ`worksample`内に、作成した回答・改善案を`2_example_answer.ipynb`というファイル名で`Github`上で見れるようにしましょう。複数の回答を作成した場合は区別できる名前にしてください。
+Githubリポジトリ`worksample`内に、作成した回答・改善案を`2_example_answer.ipynb`というファイル名で`Github`上で見れるようにしましょう。複数の課題の回答を作成した場合は区別できる名前にしてください。
 
 ## 提出方法
 
