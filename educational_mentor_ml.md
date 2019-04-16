@@ -31,7 +31,7 @@ DIVE INTO CODEは未経験であっても必要な知識をキャッチアップ
 
 現時点で知識が身についていない方を対象に、推薦学習教材をお伝えします。
 
-[推薦学習教材](https://github.com/DiveintoCode-corp/worksample/blob/master/learning_material_artificial_intelligence.md)
+[推薦学習教材](https://github.com/DiveintoCode-corp/worksample/blob/master/learning_material_machine_learning.md)
 
 ## メンタリング質問対応
 
