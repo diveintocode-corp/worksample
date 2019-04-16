@@ -89,7 +89,7 @@ Jupyter Notebookを用いてipynbファイルにPythonコードとMarkdownによ
 
 それぞれの課題は2019年1月期の受講生に公開されているものと同内容になっています。
 
-- A ml_week1.md（Week1授業前課題1 Pythonを使ってみよう）
+- A Week1授業前課題1 Pythonを使ってみよう
 
 https://github.com/DiveintoCode-corp/worksample/blob/master/ml_week1.md
 
