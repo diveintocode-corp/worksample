@@ -624,9 +624,3 @@ for i in range(num):
     ax.set_title("{} / {}".format(y_pred[false_list[i]],y_val[false_list[i]]))
     ax.imshow(X_val.reshape(-1,28,28)[false_list[i]], cmap='gray')
 ```
-
-----
-
-## Githubでの提出
-
-- 検証や説明を行ったファイルを`sprint10-dl-scratch-neural-network.ipynb`として`sprint10`に格納

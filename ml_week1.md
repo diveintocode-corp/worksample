@@ -286,9 +286,3 @@ plt.plot(配列名)
 （検索例）
 
 「Python 機械学習 なぜ」「Python vs R」
-
----
-
-## Githubでの提出
-
-- 検証や説明を行ったファイルを`week1-work1.ipynb`として`week1`に格納
