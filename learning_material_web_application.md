@@ -15,7 +15,7 @@
 [Ruby on Rails](https://prog-8.com/languages/rails5)  
 [Railsチュートリアル](https://railstutorial.jp/)  
   
-* Gitを学ぶ
+* Gitを学ぶ  
 [サルでもわかるGit入門](https://backlog.com/ja/git-tutorial/intro/01/)  
   
 * GitHubを学ぶ  
