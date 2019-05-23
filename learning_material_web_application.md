@@ -5,38 +5,30 @@
 英語のサービスは、ブラウザの翻訳機能を使い、翻訳すれば容易に学習ができます。  
 なお、弊社に著作権が帰属していないサービスがあります。 `それらの教材に関する質疑応答はできません。` あらかじめご了承ください。  
   
-*ゼロからHTMLを学習する*  
-[HTML入門](https://dotinstall.com/lessons/basic_html_v3)  
-[Learn HTML](https://www.codecademy.com/learn/learn-html)  
+* HTML, CSS, JavaScriptを学ぶ  
+[MDN Web 入門](https://developer.mozilla.org/ja/docs/Learn/Getting_started_with_the_web)  
   
-*ゼロからCSSを学習する*  
-[CSS入門](https://dotinstall.com/lessons/basic_css_v3)  
+* Rubyを学ぶ  
+[公式 20分ではじめるRuby](https://www.ruby-lang.org/ja/documentation/quickstart/)  
   
-*ゼロからJavaScriptを学習する*  
-[JavaScript入門](https://dotinstall.com/lessons/basic_javascript_v2)  
-  
-*ゼロからRubyを学習する*  
-[Ruby](https://prog-8.com/languages/ruby)  
-[Learn Ruby](https://www.codecademy.com/learn/ruby)  
-  
-*ゼロからRuby on Railsを学習する*  
+* Ruby on Railsを学ぶ  
 [Ruby on Rails](https://prog-8.com/languages/rails5)  
-[Learn Ruby on Rails](https://www.codecademy.com/learn/learn-rails)  
+[Railsチュートリアル](https://railstutorial.jp/)  
   
-*ゼロからGitを学習する*  
-[git入門](https://dotinstall.com/lessons/basic_git)  
+* Gitを学ぶ
+[サルでもわかるGit入門](https://backlog.com/ja/git-tutorial/intro/01/)  
   
-*ゼロからGitHubを学習する*  
+* GitHubを学ぶ  
 [今日からはじめるGitHub 〜 初心者がGitをインストールして、プルリクできるようになるまでを解説](https://employment.en-japan.com/engineerhub/entry/2017/01/31/110000)  
 [Creating files on GitHub](https://github.com/blog/1327-creating-files-on-github)  
 [Editing files in your repository](https://help.github.com/articles/editing-files-in-your-repository/)  
-
-*ゼロからMarkdownを学習する*  
-[Markdown記法 チートシート
-Raw](https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8cf49d57fa)  
+[公式 Hello World](https://guides.github.com/activities/hello-world/)  
+  
+* Markdownを学ぶ  
+[Markdown記法 チートシートRaw](https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8cf49d57fa)  
 [What is Markdown?](https://guides.github.com/features/mastering-markdown/)  
   
-*ゼロからRuby on Railsアプリケーションの公開までを一気に体験してみる*  
+*  Ruby on Railsでアプリケーション公開までを一気に体験する  
 [Rails00_Codeanywhere版](https://diver.diveintocode.jp/seminar_documents/rails00_codeanywhere)  
 [Rails01_Codeanywhere版](https://diver.diveintocode.jp/seminar_documents/rails01_codeanywhere)  
 [Rails02_Codeanywhere版](https://diver.diveintocode.jp/seminar_documents/rails02_codeanywhere)  
@@ -45,4 +37,4 @@ Raw](https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8cf49d57fa)
 はじめてのプログラミングを通して、思ったこと、感じたこと、気づいたことをぜひ教えてください。  
 楽しみにお待ちしております。  
 
-DIVE INTO CODE [野呂浩良](https://www.facebook.com/norotime)
+DIVE INTO CODE [野呂浩良](https://www.facebook.com/norotime)  
