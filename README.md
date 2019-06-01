@@ -26,9 +26,7 @@ https://github.com/DiveintoCode-corp/worksample/blob/master/educational_mentor_w
 
 ### BOOTUP教育メンター（Webエンジニアコース）  
 
-（準備中）  
-<!-- TODO プルリクがマージされたらURLを貼ります。 -->
-
+https://github.com/DiveintoCode-corp/worksample/tree/master/worksample_for_bootup
 
 ### 教育メンター（機械学習コース）
 
