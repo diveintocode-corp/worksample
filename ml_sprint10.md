@@ -1,11 +1,5 @@
 # Sprint10課題 深層学習スクラッチニューラルネットワーク（機械学習コースワークサンプル用）
 
-⚠課題を完了させることは、DIVE INTO CODEを卒業するための必須条件です。
-
-⚠課題では、テキストにも含まれていない新しい知識が含まれています。これは自分で調べて新しいことを把握する力を身に着けてほしいからです。
-
-`課題`を一人で遂行できる力を身につけることで、きちんとした現場に通用する能力を身につけることができます。それでは頑張っていきましょう！
-
 ------------
 ## この課題の目的
 
@@ -13,10 +7,6 @@
 - 画像データの簡単な扱い方を知る
 
 ------------
-
-`以下の要件をすべて満たしていた場合、合格とします。`
-
-`※Jupyter Notebookを使い課題に沿った検証や説明ができている。`
 
 ## スクラッチによる実装
 
@@ -228,7 +218,7 @@ class ScratchSimpleNeuralNetrowkClassifier():
 
 これまでの機械学習スクラッチでは、全てのサンプルを一度に計算していました。しかし、ニューラルネットワークではデータを分割して入力する`確率的勾配降下法`が一般的です。分割した際のひとかたまりを`ミニバッチ`、そのサンプル数を`バッチサイズ`と呼びます。
 
-今回はバッチサイズを10とします。今回使う学習用データは48000枚ですから、4800回の更新を繰り返すことになります。ニューラルネットワークではこれを4800回`イテレーション（iteration）`すると呼びます。学習データを一度全て見ると1回の`エポック（epoch）`が終わったことになります。このエポックを複数回繰り返し、学習が完了します。
+今回はバッチサイズを20とします。今回使う学習用データは48000枚ですから、`48000/20`で2400回の更新を繰り返すことになります。ニューラルネットワークではこれを2400回`イテレーション（iteration）`すると呼びます。学習データを一度全て見ると1回の`エポック（epoch）`が終わったことになります。このエポックを複数回繰り返し、学習が完了します。
 
 これを実現するための簡素なイテレータを用意しました。for文で呼び出すと、ミニバッチを取得できます。
 
@@ -250,12 +240,12 @@ class GetMiniBatch:
     seed : int
       NumPyの乱数のシード
     """
-    def __init__(self, X, y, batch_size = 10, seed=0):
+    def __init__(self, X, y, batch_size = 20, seed=0):
         self.batch_size = batch_size
         np.random.seed(seed)
         shuffle_index = np.random.permutation(np.arange(X.shape[0]))
-        self.X = X[shuffle_index]
-        self.y = y[shuffle_index]
+        self._X = X[shuffle_index]
+        self._y = y[shuffle_index]
         self._stop = np.ceil(X.shape[0]/self.batch_size).astype(np.int)
 
     def __len__(self):
@@ -264,7 +254,7 @@ class GetMiniBatch:
     def __getitem__(self,item):
         p0 = item*self.batch_size
         p1 = item*self.batch_size + self.batch_size
-        return self.X[p0:p1], self.y[p0:p1]        
+        return self._X[p0:p1], self._y[p0:p1]        
 
     def __iter__(self):
         self._counter = 0
@@ -276,7 +266,7 @@ class GetMiniBatch:
         p0 = self._counter*self.batch_size
         p1 = self._counter*self.batch_size + self.batch_size
         self._counter += 1
-        return self.X[p0:p1], self.y[p0:p1]
+        return self._X[p0:p1], self._y[p0:p1]
 ```
 
 このクラスをニューラルネットワークのクラス内でインスタンス化し、for文を使うことでミニバッチが取り出せます。
@@ -284,9 +274,9 @@ class GetMiniBatch:
 ```py
 # 以下をニューラルネットワークのクラス内で呼び出す
 
-get_mini_batch = GetMiniBatch(X_train, y_train, batch_size=10)
+get_mini_batch = GetMiniBatch(X_train, y_train, batch_size=20)
 
-print(len(get_mini_batch)) # 4800
+print(len(get_mini_batch)) # 2400
 print(get_mini_batch[5]) # 5番目のミニバッチが取得できる
 for mini_X_train, mini_y_train in get_mini_batch:
     # このfor文内でミニバッチが使える
@@ -302,7 +292,7 @@ for mini_X_train, mini_y_train in get_mini_batch:
 各層の数式を以下に示します。今回はそれぞれの記号が表す配列が、実装上どのようなndarrayのshapeになるかを併記してあります。
 
 ```
-batch_size = 10 # バッチサイズ
+batch_size = 20 # バッチサイズ
 n_features = 784 # 特徴量の数
 n_nodes1 = 400 # 1層目のノード数
 n_nodes2 = 200 # 2層目のノード数
@@ -431,14 +421,14 @@ $$
 次の数式です。
 
 $$
-Z_{3\_k} = \frac{exp(A_{3\_k})}{\sum_{i=1}^{n}exp(A_{3\_i})}
+Z_{3\_k} = \frac{exp(A_{3\_k})}{\sum_{i=1}^{n_c}exp(A_{3\_i})}
 $$
 
 $Z_{3\_k}$ : $k$ 番目のクラスの確率ベクトル (batch_size,)
 
 $A_{3\_k}$ : $k$ 番目のクラスにあたる前の層からのベクトル (batch_size,)
 
-$n$ : クラスの数、n_output。今回のMNISTでは10。
+$n_c$ : クラスの数、n_output。今回のMNISTでは10。
 
 分母は全てのクラスに相当する値を指数関数に通した上で足し合わせたものです。その中で、分子に $k$ 番目のクラスを持ってくることで、 $k$ 番目のクラスである確率が求まります。
 
@@ -451,11 +441,18 @@ $n$ : クラスの数、n_output。今回のMNISTでは10。
 多クラス分類の目的関数である交差エントロピー誤差 $L$ は次の数式です。
 
 $$
-L = - \sum_{i}^{n}Y_i log(Z_{3\_i})
+L = - \frac{1}{n_b}\sum_{j}^{n_b}\sum_{k}^{n_c}y_{jk} log(z_{3\_jk})
 $$
 
-$Y_i$ : i番目のクラスの正解ラベル（one-hot表現で0か1）
+$y_{ij}$ : $j$ 番目のサンプルの $k$ 番目のクラスの正解ラベル（one-hot表現で0か1のスカラー）
 
+$z_{3\_ij}$ : $j$ 番目のサンプルの $k$ 番目のクラスの確率（スカラー）
+
+$n_{b}$ : バッチサイズ、batch_size
+
+$n_{c}$ : クラスの数、n_output（今回のMNISTでは10）
+
+サンプル1つあたりの誤差が求まります。
 
 ### バックプロパゲーション
 
@@ -466,9 +463,9 @@ $Y_i$ : i番目のクラスの正解ラベル（one-hot表現で0か1）
 まず、i層目の重みとバイアスの更新式です。 $W_i$ と $B_i$ に対し、更新後の $W_i^{\prime}$ と $B_i^{\prime}$ は次の数式で求められます。
 
 $$
-W_i^{\prime} = W_i - \alpha E(\frac{\partial L}{\partial W_i}) \\
+W_i^{\prime} = W_i - \alpha \frac{\partial L}{\partial W_i} \\
 
-B_i^{\prime} = B_i - \alpha E(\frac{\partial L}{\partial B_i})
+B_i^{\prime} = B_i - \alpha \frac{\partial L}{\partial B_i}
 $$
 
 $\alpha$ : 学習率（層ごとに変えることも可能だが、基本的には全て同じとする）
@@ -477,9 +474,6 @@ $\frac{\partial L}{\partial W_i}$ : $W_i$ に関する損失 $L$ の勾配
 
 $\frac{\partial L}{\partial B_i}$ : $B_i$ に関する損失 $L$ の勾配
 
-$E()$ : ミニバッチ方向にベクトルの平均を計算
-
-
 この更新方法はSprint3線形回帰やsprint4ロジスティック回帰における最急降下法と同様です。より効果的な更新方法が知られており、それは次のSprintで扱います。
 
 勾配 $\frac{\partial L}{\partial W_i}$ や $\frac{\partial L}{\partial B_i}$ を求めるために、バックプロパゲーションを行います。以下の数式です。ハイパボリックタンジェント関数を使用した例を載せました。シグモイド関数の場合の数式はその後ろにあります。
@@ -487,88 +481,94 @@ $E()$ : ミニバッチ方向にベクトルの平均を計算
 「3層目」
 
 $$
-\frac{\partial L}{\partial A_3} = Z_3 - Y\\
+\frac{\partial L}{\partial A_3} = \frac{1}{n_b}\sum_{j}^{n_b}(Z_{3\_j} - Y_{j})\\
 
 \frac{\partial L}{\partial B_3} = \frac{\partial L}{\partial A_3}\\
 
-\frac{\partial L}{\partial W_3} = Z_2^T \cdot \frac{\partial L}{\partial A_3}\\
+\frac{\partial L}{\partial W_3} = (\frac{1}{n_b}\sum_{j}^{n_b}Z_{2\_j}^T) \cdot \frac{\partial L}{\partial A_3}\\
 
 \frac{\partial L}{\partial Z_2} = \frac{\partial L}{\partial A_3} \cdot W_3^T
 $$
 
-$\frac{\partial L}{\partial A_3}$ : $A_3$ に関する損失 $L$ の勾配 (batch_size, n_output)
+$\frac{\partial L}{\partial A_3}$ : $A_3$ に関する損失 $L$ の勾配 (1, n_output)
 
-$\frac{\partial L}{\partial B_3}$ : $B_3$ に関する損失 $L$ の勾配 (batch_size, n_output)
+$\frac{\partial L}{\partial B_3}$ : $B_3$ に関する損失 $L$ の勾配 (1, n_output)
 
 $\frac{\partial L}{\partial W_3}$ : $W_3$ に関する損失 $L$ の勾配 (n_nodes2, n_output)
 
-$\frac{\partial L}{\partial Z_2}$ : $Z_2$ に関する損失 $L$ の勾配 (batch_size, n_nodes2)
+$\frac{\partial L}{\partial Z_2}$ : $Z_2$ に関する損失 $L$ の勾配 (1, n_nodes2)
 
-$Z_3$ フォワードプロパゲーションの出力 (batch_size, n_output)
+$Z_{3\_j}$ : $j$ 番目のサンプルの3層目の出力 (1, n_output)
 
-$Y$ : 正解ラベルのベクトル (batch_size, n_output)
+$Y_{j}$ : $j$ 番目のサンプルの正解ラベル (1, n_output)
 
-$Z_2^T$ 転置した2層目の出力 (n_nodes2, batch_size)
+$Z_{2\_j}$ : $j$ 番目のサンプルの2層目の出力 (n_nodes2, 1)
 
-$W_3^T$ 転置した3層目の重み (n_output, n_nodes2)
+$W_3$ : 3層目の重み (n_nodes2, n_output)
 
 
 「2層目」
 
 $$
-\frac{\partial L}{\partial A_2} = \frac{\partial L}{\partial Z_2} × \{1-tanh^2(A_2)\}\\
-\frac{\partial L}{\partial B_2} = \frac{\partial L}{\partial A_2}
-\\
-\frac{\partial L}{\partial W_2} = Z_1^T \cdot \frac{\partial L}{\partial A_2}
-\\
+\frac{\partial L}{\partial A_2} = \frac{\partial L}{\partial Z_2} × \{1-tanh^2(\frac{1}{n_b}\sum_{j}^{n_b}A_{2\_j})\}\\
+
+\frac{\partial L}{\partial B_2} = \frac{\partial L}{\partial A_2}\\
+
+\frac{\partial L}{\partial W_2} = (\frac{1}{n_b}\sum_{j}^{n_b}Z_{1\_j}^T) \cdot \frac{\partial L}{\partial A_2}\\
+
 \frac{\partial L}{\partial Z_1} = \frac{\partial L}{\partial A_2} \cdot W_2^T
 $$
 
-$\frac{\partial L}{\partial A_2}$ : $A_2$ に関する損失 $L$ の勾配 (batch_size, n_nodes2)
+$\frac{\partial L}{\partial A_2}$ : $A_2$ に関する損失 $L$ の勾配 (1, n_nodes2)
 
-$\frac{\partial L}{\partial B_2}$ : $B_2$ に関する損失 $L$ の勾配 (batch_size, n_nodes2)
+$\frac{\partial L}{\partial B_2}$ : $B_2$ に関する損失 $L$ の勾配 (1, n_nodes2)
 
 $\frac{\partial L}{\partial W_2}$ : $W_2$ に関する損失 $L$ の勾配 (n_nodes1, n_nodes2)
 
-$\frac{\partial L}{\partial Z_1}$ : $Z_1$ に関する損失 $L$ の勾配 (batch_size, n_nodes1)
+$\frac{\partial L}{\partial Z_2}$ : $Z_2$ に関する損失 $L$ の勾配 (1, n_nodes2)
 
-$A_2$ フォワードプロパゲーションの2層目の出力 (batch_size, n_nodes2)
+$Z_{2\_j}$ : $j$ 番目のサンプルの2層目の出力 (1, n_nodes2)
 
-$Z_1^T$ 転置した1層目の出力 (n_nodes1, batch_size)
+$A_{2\_j}$ : $j$ 番目のサンプルの2層目の活性化関数の出力 (1, n_nodes2)
 
-$W_2^T$ 転置した2層目の重み (n_nodes2, n_nodes1)
+$Z_{1\_j}$ : $j$ 番目のサンプルの1層目の出力 (n_nodes1, 1)
 
+$W_2$ : 2層目の重み (n_nodes1, n_nodes2)
 
 「1層目」
 
 $$
-\frac{\partial L}{\partial A_1} = \frac{\partial L}{\partial Z_1} × \{1-tanh^2(A_1)\}
-\\
-\frac{\partial L}{\partial B_1} = \frac{\partial L}{\partial A_1}
-\\
-\frac{\partial L}{\partial W_1} = X^T \cdot \frac{\partial L}{\partial A_1}
+\frac{\partial L}{\partial A_1} = \frac{\partial L}{\partial Z_1} × \{1-tanh^2(\frac{1}{n_b}\sum_{j}^{n_b}A_{1\_j})\}\\
+
+\frac{\partial L}{\partial B_1} = \frac{\partial L}{\partial A_1}\\
+
+\frac{\partial L}{\partial W_1} = (\frac{1}{n_b}\sum_{j}^{n_b}X_{j}^T) \cdot \frac{\partial L}{\partial A_1}\\
 $$
 
-$\frac{\partial L}{\partial A_1}$ : $A_1$ に関する損失 $L$ の勾配 (batch_size, n_nodes1)
+$\frac{\partial L}{\partial A_1}$ : $A_1$ に関する損失 $L$ の勾配 (1, n_nodes1)
 
-$\frac{\partial L}{\partial B_1}$ : $B_1$ に関する損失 $L$ の勾配 (batch_size, n_nodes1)
+$\frac{\partial L}{\partial B_1}$ : $B_1$ に関する損失 $L$ の勾配 (1, n_nodes1)
 
 $\frac{\partial L}{\partial W_1}$ : $W_1$ に関する損失 $L$ の勾配 (n_features, n_nodes1)
 
-$A_1$ フォワードプロパゲーションの1層目の出力 (batch_size, n_nodes1)
+$\frac{\partial L}{\partial Z_1}$ : $Z_1$ に関する損失 $L$ の勾配 (1, n_nodes1)
 
-$X^T$ 転置した特徴量ベクトル (n_feature, batch_size)
+$Z_{1\_j}$ : $j$ 番目のサンプルの1層目の出力 (1, n_nodes2)
 
-$W_1^T$ 転置した1層目の重み (n_nodes1, n_features)
+$A_{1\_j}$ : $j$ 番目のサンプルの1層目の活性化関数の出力 (1, n_nodes1)
+
+$X_j$ : $j$ 番目のサンプル (n_features, 1)
+
+$W_1$ : 1層目の重み (n_features, n_nodes1)
 
 **補足**
 
 活性化関数にシグモイド関数を使用した場合は、次のようになります。
 
 $$
-\frac{\partial L}{\partial A_2} = \frac{\partial L}{\partial Z_2} ×  \{1-sigmoid(A_2)\}sigmoid(A_2)
+\frac{\partial L}{\partial A_2} = \frac{\partial L}{\partial Z_2} ×  \{1-sigmoid(\frac{1}{n_b}\sum_{j}^{n_b}A_{2\_j})\}sigmoid(\frac{1}{n_b}\sum_{j}^{n_b}A_{2\_j})
 \\
-\frac{\partial L}{\partial A_1} = \frac{\partial L}{\partial Z_1} ×  \{1-sigmoid(A_1)\}sigmoid(A_1)
+\frac{\partial L}{\partial A_1} = \frac{\partial L}{\partial Z_1} ×  \{1-sigmoid(\frac{1}{n_b}\sum_{j}^{n_b}A_{1\_j})\}sigmoid(\frac{1}{n_b}\sum_{j}^{n_b}A_{1\_j})
 $$
 
 ### 推定
