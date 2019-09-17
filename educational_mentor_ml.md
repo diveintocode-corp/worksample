@@ -68,7 +68,7 @@ np.dot(a,b)
 
 Jupyter Notebookを用いてipynbファイルにPythonコードとMarkdownによる説明を記述してください。Jupyter Notebookを使う環境が手元にない場合は、Google Colaboratoryを使用するのも便利です。
 
-[DIVER | Python入門0 Google Colaboratoryの使い方](https://diver.diveintocode.jp/seminar_documents/54)
+[DIVER | Python入門0 Google Colaboratoryの使い方](https://exam.diveintocode.jp/seminar_documents/54)
 
 課題回答は受講生に対して配布することを想定して書いてください。単純に答えを書くのではなく、例えば以下のような内容を含められると良いでしょう。
 
@@ -91,7 +91,7 @@ Python入門セミナーや、フルタイムコースの事前準備用とし�
 
 この課題や、入門テキストに関しては以下のページで無料公開されています。
 
-[DIVER | セミナー資料](https://diver.diveintocode.jp/seminar_documents)
+[DIVER | セミナー資料](https://exam.diveintocode.jp/seminar_documents)
 
 - B Sprint10課題 深層学習スクラッチニューラルネットワーク
 
