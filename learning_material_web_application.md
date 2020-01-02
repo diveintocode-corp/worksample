@@ -28,12 +28,6 @@
 [Markdown記法 チートシートRaw](https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8cf49d57fa)  
 [What is Markdown?](https://guides.github.com/features/mastering-markdown/)  
   
-*  Ruby on Railsでアプリケーション公開までを一気に体験する  
-[Rails00_Codeanywhere版](https://diver.diveintocode.jp/seminar_documents/rails00_codeanywhere)  
-[Rails01_Codeanywhere版](https://diver.diveintocode.jp/seminar_documents/rails01_codeanywhere)  
-[Rails02_Codeanywhere版](https://diver.diveintocode.jp/seminar_documents/rails02_codeanywhere)  
-[Rails03_Codeanywhere版](https://diver.diveintocode.jp/seminar_documents/rails03_codeanywhere)  
-
 はじめてのプログラミングを通して、思ったこと、感じたこと、気づいたことをぜひ教えてください。  
 楽しみにお待ちしております。  
 
