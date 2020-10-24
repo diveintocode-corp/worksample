@@ -16,9 +16,10 @@ In addition, there are services to which the copyright does not belong to us. `W
 [公式 20分ではじめるRuby](https://www.ruby-lang.org/ja/documentation/quickstart/)  
 [Official: Ruby in Twenty Minutes](https://www.ruby-lang.org/en/documentation/quickstart/)  
 * Ruby on Railsを学ぶ　Learn Ruby on Rails  
-[Ruby on Rails](https://prog-8.com/languages/rails5)  
-[Ruby on Rails](https://progate.com/languages/rails5)  
-[Railsチュートリアル](https://railstutorial.jp/) (Only in Japanese)  
+[Ruby on Rails (Japanese)](https://prog-8.com/languages/rails5)    
+[Ruby on Rails (English)](https://progate.com/languages/rails5)  
+[Railsチュートリアル](https://railstutorial.jp/) (Japanese, for free)    
+[Rails tutorial](https://www.railstutorial.org/) (English, PAID SERVICE)    
   
 * Gitを学ぶ　Learn Git  
 [サルでもわかるGit入門](https://backlog.com/ja/git-tutorial/intro/01/)  
