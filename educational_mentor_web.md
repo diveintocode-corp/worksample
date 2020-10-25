@@ -128,10 +128,10 @@ Also, be sure to be careful about copyright.
 見出しを作成することができたら、`worksample`というGithubリポジトリを作成し、作成した見出しを`1_create_heading.md`というファイル名で作成し、`Github`上で見れるようにしましょう。  
 Once you create a heading, create a Github repository called `worksample`, create the created heading with the file name` 1_create_heading.md`, and make it visible on `Github`.  
 
-### 見出しを肉付けしよう　Let's flesh out the headline
+### 見出しを肉付けしよう　Let's expand the headline
 
 見出しを作成することができたら、その次は DIVE INTO CODE のワークサンプル担当者からのレビューがあり、そして見出しに肉付けを行います。  
-Once you've created the headline, the next step is a review from the DIVE INTO CODE work sampler, and then flesh out the headline.  
+Once you've created the headline, the next step is a review from the DIVE INTO CODE work sampler, and if you get permissions, then expand the headline.  
 また、詳しく説明するために、さらに見出しを付け加えても構いません。  
 You can also add more headings to explain in more detail.  
 
@@ -142,7 +142,7 @@ You can also add more headings to explain in more detail.
 ### List
 ```
 
-`肉付け後の例　Example after Fleshing`
+`肉付け後の例　Example after Expanding`
 
 ```
 ### リスト　List
